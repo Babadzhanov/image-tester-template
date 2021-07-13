@@ -1,0 +1,17 @@
+.single-page {
+}
+
+@include SmallDevice {
+    .single-page {
+    }
+}
+
+@include MediumDevice {
+    .single-page {
+    }
+}
+
+@include OnEmbedDevice() {
+    .single-page {
+    }
+}

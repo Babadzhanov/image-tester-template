@@ -1,0 +1,127 @@
+/*************************/
+/////// GENERAL VARS //////
+/*************************/
+
+//border style of the button
+$border-style: 1px solid white !default;
+
+//paddings of the button on different sizes
+$paddings: (0px 13px) (0px 30px) (0px 50px);
+
+//label text color
+$label-color: white !default;
+
+//button background color on hover
+$bg-hover-color: blue !default;
+
+$label-hover-color: white !default;
+
+/*************************/
+/////// CUSTOM VARS ///////
+/*************************/
+
+/*************************/
+///// TYPOGRAPHY VARS /////
+/*************************/
+
+//font family of the label
+$btn-font-1: "Roboto, Sans-serif" !default;
+
+//label font sizes
+$font-sizes: 15px 15px 15px;
+
+//letter spacing of the button label
+$letter-space: normal;
+$background-color: blue !default;
+
+$btn-widths: auto auto auto;
+$btn-heights: 42px 45px 45px;
+
+/*************************/
+///// COMPONENT CODE //////
+/*************************/
+.button {
+    // @extend %no-user-select;
+    display: inline-block;
+    padding: nth($paddings, 1);
+    background-color: $background-color;
+    border: $border-style;
+    text-align: center;
+    -webkit-transition: all 100ms ease-in;
+    -moz-transition: all 100ms ease-in;
+    -ms-transition: all 100ms ease-in;
+    -o-transition: all 100ms ease-in;
+    transition: all 100ms ease-in;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    width: nth($btn-widths, 1);
+    height: nth($btn-heights, 1);
+    line-height: nth($btn-heights, 1);
+
+    &:hover {
+        cursor: pointer;
+        color: $label-hover-color;
+        background-color: lighten($background-color, 10%);
+        .button__label {
+            color: $label-hover-color;
+        }
+    }
+
+    &.set-width {
+        width: 200px;
+        padding: nth($paddings, 1);
+    }
+}
+
+.button--transparent {
+    background: none;
+    background-color: transparent;
+    &:hover {
+        background: none;
+        background-color: $label-hover-color;
+        .button__label {
+            color: blue;
+        }
+    }
+}
+
+.button__label {
+    display: inline-block;
+    font-family: $btn-font-1;
+    text-transform: uppercase;
+    letter-spacing: $letter-space;
+    color: $label-color;
+    font-style: normal;
+    font-size: nth($font-sizes, 1);
+}
+
+@include SmallDevice {
+    .button {
+        width: nth($btn-widths, 2);
+        height: nth($btn-heights, 2);
+        line-height: nth($btn-heights, 2);
+        padding: nth($paddings, 2);
+    }
+
+    .button__label {
+        font-size: nth($font-sizes, 2);
+    }
+}
+
+@include MediumDevice {
+    .button {
+        padding: nth($paddings, 3);
+    }
+    .button__label {
+        font-size: nth($font-sizes, 3);
+    }
+}
+
+/*************************/
+/////// CUSTOM CODE ///////
+/*************************/
+
+/*************************/
+/////// CUSTOM CODE ///////
+/*************************/

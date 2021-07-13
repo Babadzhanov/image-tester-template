@@ -1,0 +1,22 @@
+%default-animation {
+    -webkit-transition: all 1s cubic-bezier(0, 0, 0, 1);
+    -moz-transition: all 1s cubic-bezier(0, 0, 0, 1);
+    -o-transition: all 1s cubic-bezier(0, 0, 0, 1);
+    transition: all 1s cubic-bezier(0, 0, 0, 1);
+}
+
+@for $i from 0 through 10 {
+    .delay-#{$i} {
+        -webkit-animation-delay: $i * 100ms;
+        -moz-animation-delay: $i * 100ms;
+        -o-animation-delay: $i * 100ms;
+        animation-delay: $i * 100ms;
+    }
+
+    .speed-#{$i} {
+        -webkit-animation-duration: $i * 100ms;
+        -moz-animation-duration: $i * 100ms;
+        -o-animation-duration: $i * 100ms;
+        animation-duration: $i * 100ms;
+    }
+}

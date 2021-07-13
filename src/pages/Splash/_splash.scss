@@ -1,0 +1,17 @@
+.splash {
+}
+
+@include SmallDevice {
+    .splash {
+    }
+}
+
+@include MediumDevice {
+    .splash {
+    }
+}
+
+@include OnEmbedDevice() {
+    .splash {
+    }
+}

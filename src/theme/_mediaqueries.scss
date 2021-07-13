@@ -1,0 +1,45 @@
+@mixin SmallDevice() {
+    @media #{$medium-and-up} {
+        @content;
+    }
+}
+
+@mixin MediumDevice() {
+    @media #{$large-and-up} {
+        @content;
+    }
+}
+
+@mixin LargeDevice() {
+    @media #{$extra-large-and-up} {
+        @content;
+    }
+}
+
+@mixin OnMobileDevice() {
+    .mobile {
+        @content;
+    }
+}
+
+@mixin OnEmbedDevice() {
+    .embed {
+        @content;
+    }
+}
+
+@mixin OnMobileLandscape() {
+    .mobile {
+        @media (orientation: landscape) {
+            @content;
+        }
+    }
+}
+
+@mixin OnMobilePortrait() {
+    .mobile {
+        @media (orientation: portrait) {
+            @content;
+        }
+    }
+}

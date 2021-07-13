@@ -1,0 +1,147 @@
+/*************************/
+/////// GENERAL VARS //////
+/*************************/
+
+//TODO vars
+
+/*************************/
+/////// CUSTOM VARS ///////
+/*************************/
+
+//TODO vars
+
+/*************************/
+///// TYPOGRAPHY VARS /////
+/*************************/
+// 1. mobile portrait
+// 2. small device
+// 3. medium device
+// 4. mobile landscape
+$h1-font-sizes: 26px 26px 46px 15px;
+$h2-font-sizes: 24px 24px 36px 12px;
+$h3-font-sizes: 14px 14px 16px 12px;
+$p-font-sizes: 14px 14px 16px 12px;
+
+$h1-line-height: 26px 26px 46px 15px;
+$h2-line-height: 24px 24px 36px 12px;
+$h3-line-height: 14px 14px 16px 12px;
+$p-line-height: 20px 20px 23px 12px;
+
+$h1-font-family: $font-1;
+$h2-font-family: $font-1;
+$h3-font-family: $font-1;
+$p-font-family: $font-1;
+
+/*************************/
+///// COMPONENT CODE //////
+/*************************/
+
+%h1,
+h1 {
+    margin: 0px;
+    font-family: $h1-font-family;
+    font-size: nth($h1-font-sizes, 1);
+    line-height: nth($h1-line-height, 1);
+}
+
+%h2,
+h2 {
+    margin: 0px;
+    font-family: $h2-font-family;
+    font-size: nth($h2-font-sizes, 1);
+    line-height: nth($h2-line-height, 1);
+}
+
+%h3,
+h3 {
+    margin: 0px;
+    font-family: $h3-font-family;
+    font-size: nth($h3-font-sizes, 1);
+    line-height: nth($h3-line-height, 1);
+}
+
+%p,
+p {
+    margin: 0px;
+    font-family: $p-font-family;
+    font-size: nth($p-font-sizes, 1);
+    line-height: nth($p-line-height, 1);
+}
+
+@include SmallDevice {
+    %h1,
+    h1 {
+        font-size: nth($h1-font-sizes, 2);
+        line-height: nth($h1-line-height, 2);
+    }
+
+    %h2,
+    h2 {
+        font-size: nth($h2-font-sizes, 2);
+        line-height: nth($h2-line-height, 2);
+    }
+
+    %h3,
+    h3 {
+        font-size: nth($h3-font-sizes, 2);
+        line-height: nth($h3-line-height, 2);
+    }
+
+    %p,
+    p {
+        font-size: nth($p-font-sizes, 2);
+        line-height: nth($p-line-height, 2);
+    }
+}
+
+@include MediumDevice {
+    %h1,
+    h1 {
+        font-size: nth($h1-font-sizes, 3);
+        line-height: nth($h1-line-height, 3);
+    }
+
+    %h2,
+    h2 {
+        font-size: nth($h2-font-sizes, 3);
+        line-height: nth($h2-line-height, 3);
+    }
+
+    %h3,
+    h3 {
+        font-size: nth($h3-font-sizes, 3);
+        line-height: nth($h3-line-height, 3);
+    }
+
+    %p,
+    p {
+        font-size: nth($p-font-sizes, 3);
+        line-height: nth($p-line-height, 3);
+    }
+}
+
+@include OnMobileLandscape {
+    %h1,
+    h1 {
+        font-size: nth($h1-font-sizes, 4);
+        line-height: nth($h1-line-height, 4);
+    }
+
+    %h2,
+    h2 {
+        font-size: nth($h2-font-sizes, 4);
+        line-height: nth($h2-line-height, 4);
+    }
+
+    %h3,
+    h3 {
+        font-size: nth($h3-font-sizes, 4);
+        line-height: nth($h3-line-height, 4);
+    }
+
+    %p,
+    p {
+        font-size: nth($p-font-sizes, 4);
+        line-height: nth($p-line-height, 4);
+    }
+}

@@ -1,0 +1,51 @@
+body {
+    background-color: $color-2;
+}
+
+a {
+    color: inherit;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+#SiteDeeplink {
+    width: 80px;
+}
+
+%box {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+%no-user-select {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+@include OnEmbedDevice {
+    .hide-on-embed,
+    %hide-on-embed {
+        display: none !important;
+    }
+}
+
+@include OnMobileDevice {
+    .hide-on-mobile,
+    %hide-on-mobile {
+        display: none !important;
+    }
+}
+
+@include OnMobileLandscape {
+    .hide-on-mobile-landscape,
+    %hide-on-mobile-landscape {
+        display: none !important;
+    }
+}

@@ -1,0 +1,13 @@
+.nav-menu {
+
+}
+
+@include SmallDevice {
+    .nav-menu {
+    }
+}
+
+@include MediumDevice {
+    .nav-menu {
+    }
+}

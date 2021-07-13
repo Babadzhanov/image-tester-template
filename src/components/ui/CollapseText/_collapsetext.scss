@@ -1,0 +1,143 @@
+/*************************/
+/////// GENERAL VARS //////
+/*************************/
+
+//TODO vars
+
+/*************************/
+/////// CUSTOM VARS ///////
+/*************************/
+
+//TODO vars
+
+/*************************/
+///// TYPOGRAPHY VARS /////
+/*************************/
+
+//TODO vars
+
+/*************************/
+///// COMPONENT CODE //////
+/*************************/
+.collapse-text {
+    width: 100%;
+    height: auto;
+    float: left;
+}
+
+.collapse-text__content {
+    width: 100%;
+    float: left;
+    & p:first-child {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        height: 20px;
+        white-space: nowrap;
+    }
+
+    & p:not(:first-child) {
+        display: none;
+    }
+
+    &[data-visible="true"] {
+        & p {
+            overflow: auto;
+            text-overflow: initial;
+            height: auto;
+            white-space: initial;
+        }
+    }
+}
+
+.collapse-text__button {
+    width: 20%;
+    float: right;
+}
+
+/*************************/
+/////// CUSTOM CODE ///////
+/*************************/
+
+.collapse-text {
+    margin: 10px 0px;
+    padding: 10px 0px;
+    border-top: 1px solid $color-4;
+    border-bottom: 1px solid $color-4;
+}
+
+.collapse-text__button {
+    display: none;
+}
+
+.collapse-text__content {
+    width: 100%;
+    text-align: left;
+    & p:first-child {
+        overflow: auto;
+        text-overflow: initial;
+        height: auto;
+        white-space: initial;
+    }
+
+    & p:not(:first-child) {
+        display: block;
+    }
+}
+
+@include SmallDevice {
+    .collapse-text__button {
+        display: block;
+    }
+
+    .collapse-text__content {
+        width: 80%;
+        text-align: justify;
+        &[data-visible="false"] {
+            & p:first-child {
+                overflow: hidden;
+                text-overflow: ellipsis;
+                height: 20px;
+                white-space: nowrap;
+            }
+            & p:not(:first-child) {
+                display: none;
+            }
+        }
+
+        &[data-visible="true"] {
+            & p {
+                display: block;
+                overflow: auto;
+                text-overflow: initial;
+                height: auto;
+                white-space: initial;
+            }
+        }
+    }
+}
+
+@include MediumDevice {
+    .collapse-text {
+        border-bottom: none;
+    }
+    .collapse-text__button {
+        display: none;
+    }
+
+    .collapse-text__content {
+        width: 100%;
+        text-align: center;
+        &[data-visible="true"],
+        &[data-visible="false"] {
+            p:not(:first-child) {
+                display: block;
+            }
+            & p:first-child {
+                overflow: auto;
+                text-overflow: initial;
+                height: auto;
+                white-space: initial;
+            }
+        }
+    }
+}

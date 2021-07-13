@@ -1,0 +1,80 @@
+/*************************/
+/////// GENERAL VARS //////
+/*************************/
+
+$box-width: 200px;
+$box-background: $color-2;
+$item-background: $color-2;
+
+/*************************/
+///// COMPONENT CODE //////
+/*************************/
+.dropdown {
+    &__wrapper {
+        position: relative;
+    }
+
+    &__label {
+        cursor: default;
+    }
+
+    &__list {
+        position: relative;
+        width: $box-width;
+        list-style: none;
+        border: 1px solid $color-1;
+    }
+
+    &__arrow {
+        display: flex;
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+
+        &--open {
+            transform: rotate(180deg) translateY(50%);
+        }
+    }
+
+    &__options {
+        position: absolute;
+        width: $box-width;
+        top: 100%;
+        left: 0;
+    }
+
+    &__list-item {
+        cursor: pointer;
+        padding: 8px 10px;
+        list-style-position: inside;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        background: $item-background;
+
+        &--selected {
+            background: $box-background;
+        }
+    }
+}
+
+@include SmallDevice {
+    .dropdown {
+    }
+}
+
+@include MediumDevice {
+    .dropdown {
+    }
+}
+
+@include OnEmbedDevice() {
+    .dropdown {
+    }
+}
+
+/*************************/
+/////// CUSTOM CODE ///////
+/*************************/
+//TODO code

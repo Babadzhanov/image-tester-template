@@ -1,0 +1,23 @@
+.header {
+
+    &__block {
+
+        &--hidden {
+            display: none;
+        }
+    }
+}
+
+@include SmallDevice {
+    .header {
+    }
+}
+
+@include MediumDevice {
+    .header {
+
+        &__burger {
+            display: none;
+        }
+    }
+}

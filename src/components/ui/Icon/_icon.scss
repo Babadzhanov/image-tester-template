@@ -1,0 +1,66 @@
+/*************************/
+/////// GENERAL VARS //////
+/*************************/
+
+//TODO vars
+
+/*************************/
+/////// CUSTOM VARS ///////
+/*************************/
+$icon-widths: 40px 35px 35px;
+$icon-heights: 40px 35px 35px;
+
+//TODO vars
+
+/*************************/
+///// TYPOGRAPHY VARS /////
+/*************************/
+
+//TODO vars
+
+/*************************/
+///// COMPONENT CODE //////
+/*************************/
+.icon {
+    @extend %gradient-1;
+    height: nth($icon-heights, 1);
+    width: nth($icon-widths, 1);
+    display: inline-block;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    margin: 10px 0px;
+    &:hover {
+        cursor: pointer;
+        @extend %gradient-2;
+    }
+}
+
+@include SmallDevice {
+    .icon {
+        height: nth($icon-heights, 2);
+        width: nth($icon-widths, 2);
+    }
+}
+
+@include MediumDevice {
+    .icon {
+        height: nth($icon-heights, 3);
+        width: nth($icon-widths, 3);
+    }
+}
+
+@include OnEmbedDevice() {
+    .icon {
+    }
+}
+
+@include MediumDevice {
+    .icon {
+    }
+}
+
+/*************************/
+/////// CUSTOM CODE ///////
+/*************************/
+//TODO code
