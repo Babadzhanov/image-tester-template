@@ -20,16 +20,11 @@ export interface SinglePageProps extends ReactRedux.DispatchProp<any>, RouteComp
     navData: iNavData[];
 }
 
-const INIT_STATE: SinglePageState = {
+const INIT_STATE: SinglePageState = {};
 
-}
+export interface SinglePageState {}
 
-export interface SinglePageState {
-
-}
-
-export class SinglePage extends React.Component<SinglePageProps, SinglePageState>{
-
+export class SinglePage extends React.Component<SinglePageProps, SinglePageState> {
     constructor(props: SinglePageProps) {
         super(props);
         this.state = INIT_STATE;
@@ -54,19 +49,15 @@ export class SinglePage extends React.Component<SinglePageProps, SinglePageState
     };
 
     openBurgerMenu = () => {
-        SHOW_MENU_DIALOG(
-            this.props.navData,
-            this.props.match.params.key,
-            this.scrollToAnchor
-        );
+        SHOW_MENU_DIALOG(this.props.navData, this.props.match.params.key, this.scrollToAnchor);
     };
 
     render() {
         const { props, state } = this;
-        const cls = this.props.className || "";
+        const cls = this.props.className || '';
 
         return (
-            <div className={"single-page " + cls}>
+            <div className={'single-page ' + cls}>
                 <div className="single-page__header">
                     <Header
                         deeplink={props.deeplink}
@@ -86,7 +77,7 @@ export class SinglePage extends React.Component<SinglePageProps, SinglePageState
                     </ScrollableAnchor>
                 </div>
             </div>
-        )
+        );
     }
 }
 
@@ -94,11 +85,10 @@ const mapStateToProps = (state: IStoreState, ownProps): Partial<SinglePageProps>
     return {
         deeplink: state.app.deeplinkHtml,
         data: state.app.data,
-        navData: state.app.navData
-    }
-}
+        navData: state.app.navData,
+    };
+};
 
-const mapDispatchToProps = (dispatch: Dispatch) => bindActionCreators({
-}, dispatch);
+const mapDispatchToProps = (dispatch: Dispatch) => bindActionCreators({}, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(SinglePage);

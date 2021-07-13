@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { bindActionCreators, Dispatch } from 'redux';
 import { connect } from 'react-redux';
-import { HashRouter as Router, Route, Switch, } from 'react-router-dom';
+import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 import * as throttle from 'lodash.throttle';
 
 import { ACTIONS } from './Actions';
@@ -15,7 +15,7 @@ import { IS_MOB_LANDSCAPE } from '../../config';
 
 export const STATE_KEY = 'app';
 
-class App extends React.Component<AppProps, inAppState>{
+class App extends React.Component<AppProps, inAppState> {
     constructor(props: AppProps) {
         super(props);
         this.state = inAppInitialState;
@@ -23,16 +23,16 @@ class App extends React.Component<AppProps, inAppState>{
 
     componentDidMount() {
         /*******************************************************
-        * Grabs Deeplink element and stores it in Redux state as string
-        ********************************************************/
+         * Grabs Deeplink element and stores it in Redux state as string
+         ********************************************************/
         const el = document.getElementById('SiteDeeplink');
         (el.firstElementChild as HTMLElement).style.width = null;
         this.props.getDeeplinkEl(el.outerHTML);
         el.parentNode.removeChild(el);
 
         /*******************************************************
-        * Update Firebase credentials and uncomment to load data
-        ********************************************************/
+         * Update Firebase credentials and uncomment to load data
+         ********************************************************/
         // if (DATA_SERVICE.isDataLoaded) {
 
         //     this.props.loadData(DATA_SERVICE.getData());
@@ -71,14 +71,15 @@ class App extends React.Component<AppProps, inAppState>{
             </div>
         );
     }
-};
+}
 
 function mapStateToProps(state: any, ownProps) {
     return {
-        appState: state.app
-    }
+        appState: state.app,
+    };
 }
 
-const mapDispatchToProps = (dispatch: Dispatch) => bindActionCreators({ loadData: ACTIONS.DATA_LOADED, getDeeplinkEl: ACTIONS.GET_DEEPLINK }, dispatch);
+const mapDispatchToProps = (dispatch: Dispatch) =>
+    bindActionCreators({ loadData: ACTIONS.DATA_LOADED, getDeeplinkEl: ACTIONS.GET_DEEPLINK }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

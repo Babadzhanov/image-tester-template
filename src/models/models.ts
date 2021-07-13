@@ -1,6 +1,6 @@
 export interface iActionType {
-    type: number,
-    data: any | any[],
+    type: number | string;
+    data: any | any[];
 }
 
 export interface Dictionary<T> {
@@ -36,27 +36,27 @@ export interface Translation {
 }
 
 export const INIT_TRANSLATIONS: Translation = {
-    campaignName: "",
-    campaignTitle: "",
-    clientTitle: "",
-    campaignLabel: "",
+    campaignName: '',
+    campaignTitle: '',
+    clientTitle: '',
+    campaignLabel: '',
     splashIntro: [],
-    sharebutton: "",
-    embedbutton: "",
-    emdedCopyTitle: "",
-    embedCopy: "",
-    copyToClipboard: "",
-    scrollDown: "",
-    clientUrl: "",
-    campaignUrl: "",
-    begin: "",
-    informationCopy: "",
-    exploreButton: "",
-    embedCopyTitle: "",
-    infoTitle: "",
-    altText: "",
-    valueMapDesc: []
-}
+    sharebutton: '',
+    embedbutton: '',
+    emdedCopyTitle: '',
+    embedCopy: '',
+    copyToClipboard: '',
+    scrollDown: '',
+    clientUrl: '',
+    campaignUrl: '',
+    begin: '',
+    informationCopy: '',
+    exploreButton: '',
+    embedCopyTitle: '',
+    infoTitle: '',
+    altText: '',
+    valueMapDesc: [],
+};
 
 export interface iNavData {
     key: string;
