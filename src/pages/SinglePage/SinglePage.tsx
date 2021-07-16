@@ -3,15 +3,14 @@ import * as ReactRedux from 'react-redux';
 import { connect } from 'react-redux';
 import { RouteComponentProps } from 'react-router';
 import { bindActionCreators, Dispatch } from 'redux';
-import * as ScrollAnimation from 'react-animate-on-scroll';
-import ScrollableAnchor, { configureAnchors, goToAnchor, removeHash } from 'react-scrollable-anchor';
+
+import { configureAnchors, goToAnchor, removeHash } from 'react-scrollable-anchor';
 
 import { IStoreState } from '../../_reducers';
 import { iData, iNavData, Dictionary } from '../../models/models';
 import { DP } from '../../constants';
 import { SHOW_MENU_DIALOG } from '../../components/ui/Dialog/Utils';
-import { Header } from '../../components/ui/Header/Header';
-import Splash from '../Splash/Splash';
+import Template from '../../components/ui/Template/Template';
 
 export interface SinglePageProps extends ReactRedux.DispatchProp<any>, RouteComponentProps<any> {
     className?: string;
@@ -58,24 +57,7 @@ export class SinglePage extends React.Component<SinglePageProps, SinglePageState
 
         return (
             <div className={'single-page ' + cls}>
-                <div className="single-page__header">
-                    <Header
-                        deeplink={props.deeplink}
-                        navData={props.navData}
-                        currSection={props.match.params.key}
-                        scrollToAnchor={this.scrollToAnchor}
-                        openBurgerMenu={this.openBurgerMenu}
-                    />
-                </div>
-                <div className="single-page__content">
-                    <ScrollableAnchor id={'home'}>
-                        <section className="single-page__section single-page__section--splash">
-                            <ScrollAnimation animateIn="fadeIn" animateOnce={true}>
-                                <Splash />
-                            </ScrollAnimation>
-                        </section>
-                    </ScrollableAnchor>
-                </div>
+                <Template />
             </div>
         );
     }
