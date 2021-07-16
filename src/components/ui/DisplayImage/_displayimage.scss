@@ -1,0 +1,110 @@
+.image {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    margin: 25px;
+
+    &__remove {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__image {
+        height: 100%;
+        width: 100%;
+    }
+
+    &__option {
+        display: none;
+        height: 20px;
+        width: 20px;
+        position: absolute;
+        font-size: 15px;
+        background-color: black;
+        color: white;
+        border: none;
+        border-radius: 50%;
+        font-weight: 700;
+        line-height: 1;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 0;
+        transform: rotate(45deg);
+        cursor: pointer;
+        &:hover {
+            background-color: white;
+            color: black;
+        }
+
+        &--close {
+            top: 5px;
+            right: 5px;
+        }
+        &--save {
+            transform: rotate(0deg);
+            top: 5px;
+            left: 5px;
+            &.active {
+                background-color: white;
+                color: black;
+                &:hover {
+                    background-color: black;
+                    color: white;
+                }
+            }
+            &.disabled {
+                animation: spin 0.3s linear infinite;
+                @keyframes spin {
+                    100% {
+                        transform: rotate(360deg);
+                    }
+                }
+            }
+        }
+    }
+
+    &__input-resize {
+        display: none;
+        position: absolute;
+        &--show {
+            display: flex;
+        }
+    }
+
+    &__size {
+        width: 75px;
+        margin: 0 3px;
+    }
+
+    &:hover {
+        .image__option {
+            display: flex;
+        }
+        .image__input-resize {
+            display: flex;
+        }
+    }
+}
+
+@include SmallDevice {
+    .image {
+    }
+}
+
+@include MediumDevice {
+    .image {
+    }
+}
+
+@include OnEmbedDevice() {
+    .image {
+    }
+}
