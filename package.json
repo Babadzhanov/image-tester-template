@@ -13,14 +13,17 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@types/uuid": "^8.3.1",
     "lodash.throttle": "^4.1.1",
     "react": "^17.0.2",
     "react-animate-on-scroll": "^2.1.5",
     "react-dom": "^17.0.2",
     "react-redux": "^7.2.4",
+    "react-resizable": "^3.0.4",
     "react-router-dom": "^5.2.0",
     "react-scrollable-anchor": "^0.6.1",
-    "redux": "^4.1.0"
+    "redux": "^4.1.0",
+    "uuid": "^3.4.0"
   },
   "devDependencies": {
     "@types/lodash": "^4.14.171",
@@ -36,9 +39,9 @@
     "eslint-plugin-prettier": "^3.4.0",
     "eslint-plugin-react": "^7.24.0",
     "fuse-box": "^3.7.1",
+    "fuse-box-typechecker": "^2.12.0",
     "node-sass": "^6.0.1",
     "prettier": "^2.3.2",
-    "fuse-box-typechecker": "^2.12.0",
     "source-map": "^0.7.3",
     "typescript": "^4.3.5",
     "uglify-es": "^3.3.9",
